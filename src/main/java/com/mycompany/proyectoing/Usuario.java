@@ -59,7 +59,7 @@ public class Usuario implements Serializable {
         return telefono;
     }
     
-    // HOLA
+    // HOLA MUNDO
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
