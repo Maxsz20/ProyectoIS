@@ -59,7 +59,8 @@ public class Usuario implements Serializable {
         return telefono;
     }
     
-    // HOLA MUNDO
+    // HOLA MARICO
+    // SIMP
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
