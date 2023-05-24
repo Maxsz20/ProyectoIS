@@ -144,6 +144,7 @@ public class Ciudad extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel5.setText("Nombre de la Ciudad");
 
@@ -151,9 +152,11 @@ public class Ciudad extends javax.swing.JFrame {
         Descripcion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Descripcion.setText("<html>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</html>");
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel6.setText("Alojamientos Encontrados:");
 
+        NumHotelesEncontrados.setBackground(new java.awt.Color(255, 255, 255));
         NumHotelesEncontrados.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         NumHotelesEncontrados.setText("#");
 
@@ -224,6 +227,7 @@ public class Ciudad extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Nombre del Hotel");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -237,6 +241,7 @@ public class Ciudad extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Habitaciones disponibles: ");
 
         jButton2.setBackground(new java.awt.Color(11, 59, 89));
@@ -249,6 +254,7 @@ public class Ciudad extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("<html>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</html>");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
