@@ -17,6 +17,7 @@ public class LandingPage extends javax.swing.JFrame {
     private SignUp_1 sp;
     private Login lg;
     private VistaCiudad vc;
+    private VistaPago vp;
 
     public Login getLg() {
         return lg;
@@ -26,8 +27,6 @@ public class LandingPage extends javax.swing.JFrame {
         this.lg = lg;
     }
 
-    
-    
     public SignUp_1 getSp() {
         return sp;
     }
@@ -43,6 +42,15 @@ public class LandingPage extends javax.swing.JFrame {
     public void setVc(VistaCiudad vc) {
         this.vc = vc;
     }
+
+    public VistaPago getVp() {
+        return vp;
+    }
+
+    public void setVp(VistaPago vp) {
+        this.vp = vp;
+    }
+    
     public String StrToHtml(String texto){
            return "<html>" + texto + "</html>";
     }
@@ -66,12 +74,16 @@ public class LandingPage extends javax.swing.JFrame {
         initComponents();
         this.Icono.setVisible(false);
         this.CorreoUser.setVisible(false);
+        
         this.sp = new SignUp_1();
         this.lg = new Login();
         this.vc = new VistaCiudad();
+        this.vp = new VistaPago();
+        
         this.sp.setLp(this);
         this.lg.setLp(this);
         this.vc.setLp(this);
+        this.vp.setLp(this);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -683,6 +695,7 @@ public class LandingPage extends javax.swing.JFrame {
             this.vc.CorreoUser.setText(CorreoUser.getText());
             this.vc.Inicial.setText(Inicial.getText());
             this.vc.setVisible(true);
+            this.vc.setLp(this);
             this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null,"Debe estar con un perfil activo para avanzar");

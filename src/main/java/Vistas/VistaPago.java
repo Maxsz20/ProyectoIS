@@ -4,6 +4,8 @@
  */
 package Vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Maxi
@@ -11,6 +13,7 @@ package Vistas;
 public class VistaPago extends javax.swing.JFrame {
 
     private VistaHabitaciones vha;
+    private LandingPage lp;
     
     public VistaHabitaciones getVha() {
         return vha;
@@ -18,6 +21,14 @@ public class VistaPago extends javax.swing.JFrame {
 
     public void setVha(VistaHabitaciones vha) {
         this.vha = vha;
+    }
+
+    public LandingPage getLp() {
+        return lp;
+    }
+
+    public void setLp(LandingPage lp) {
+        this.lp = lp;
     }
     
     public VistaPago() {
@@ -44,9 +55,9 @@ public class VistaPago extends javax.swing.JFrame {
         NombreHotel = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Entrada = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Salida = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         TipoHabitacion = new javax.swing.JLabel();
@@ -149,14 +160,14 @@ public class VistaPago extends javax.swing.JFrame {
         jLabel4.setText("Fecha de Entrada");
         jLabel4.setToolTipText("");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Entrada.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Fecha de Salida");
         jLabel5.setToolTipText("");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Salida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -230,6 +241,11 @@ public class VistaPago extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Pagar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -246,9 +262,9 @@ public class VistaPago extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
@@ -268,11 +284,11 @@ public class VistaPago extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -300,10 +316,25 @@ public class VistaPago extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+        
         this.vha.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         if(Entrada.getText().isEmpty() || Salida.getText().isEmpty()){
+            
+            JOptionPane.showMessageDialog(null,"Error: debe introducir las fechas de entrada y salida","Error", JOptionPane.ERROR_MESSAGE);
+            
+        }else{
+            
+            JOptionPane.showMessageDialog(null,"Su reserva se ha realizado con exito. Disfrute su viaje");
+            Entrada.setText("");
+            Salida.setText("");
+            this.lp.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,11 +374,13 @@ public class VistaPago extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel Cantidad;
     public javax.swing.JLabel CorreoUser;
+    private javax.swing.JTextField Entrada;
     public javax.swing.JPanel Icono;
     public javax.swing.JLabel Inicial;
     public javax.swing.JLabel NombreHotel;
     public javax.swing.JLabel Precio;
     public javax.swing.JLabel Precio1;
+    private javax.swing.JTextField Salida;
     public javax.swing.JLabel TipoHabitacion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
@@ -362,7 +395,5 @@ public class VistaPago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

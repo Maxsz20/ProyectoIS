@@ -15,6 +15,7 @@ public class VistaHotel extends javax.swing.JFrame {
 
     private VistaCiudad vc;
     private VistaHabitaciones vha;
+    private LandingPage lp;
     public List<Habitacion> habitaciones;
 
     public VistaCiudad getVc() {
@@ -33,6 +34,14 @@ public class VistaHotel extends javax.swing.JFrame {
         this.vha = vha;
     }
 
+    public LandingPage getLp() {
+        return lp;
+    }
+
+    public void setLp(LandingPage lp) {
+        this.lp = lp;
+    }
+    
     public VistaHotel() {
         initComponents();
 
@@ -382,6 +391,7 @@ public class VistaHotel extends javax.swing.JFrame {
         this.vha.CorreoUser.setText(CorreoUser.getText());
         this.vha.Inicial.setText(Inicial.getText());
         this.vha.setVisible(true);
+        this.vha.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

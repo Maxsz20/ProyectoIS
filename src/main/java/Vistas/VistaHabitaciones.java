@@ -16,6 +16,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     private VistaHotel vh;
     private VistaPago vp;
     private VistaCiudad vc;
+    private LandingPage lp;
     public List<Habitacion> habitacion;
 
     public VistaCiudad getVc() {
@@ -41,6 +42,14 @@ public class VistaHabitaciones extends javax.swing.JFrame {
 
     public void setVh(VistaHotel vh) {
         this.vh = vh;
+    }
+
+    public LandingPage getLp() {
+        return lp;
+    }
+
+    public void setLp(LandingPage lp) {
+        this.lp = lp;
     }
     
     /**
@@ -482,6 +491,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.CorreoUser.setText(CorreoUser.getText());
         this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
+        this.vp.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_Btn2ActionPerformed
 
@@ -500,6 +510,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.CorreoUser.setText(CorreoUser.getText());
         this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
+        this.vp.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_Btn3ActionPerformed
 
@@ -515,6 +526,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.CorreoUser.setText(CorreoUser.getText());
         this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
+        this.vp.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_Btn4ActionPerformed
 
@@ -530,6 +542,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.CorreoUser.setText(CorreoUser.getText());
         this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
+        this.vp.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_Btn1ActionPerformed
 

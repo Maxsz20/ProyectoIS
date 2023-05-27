@@ -487,6 +487,7 @@ public class VistaCiudad extends javax.swing.JFrame {
         this.vh.CorreoUser.setText(CorreoUser.getText());
         this.vh.Inicial.setText(Inicial.getText());
         this.vh.setVisible(true);
+        this.vh.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel2ActionPerformed
 
@@ -515,6 +516,7 @@ public class VistaCiudad extends javax.swing.JFrame {
         this.vh.CorreoUser.setText(CorreoUser.getText());
         this.vh.Inicial.setText(Inicial.getText());
         this.vh.setVisible(true);
+        this.vh.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel1ActionPerformed
 
@@ -543,6 +545,7 @@ public class VistaCiudad extends javax.swing.JFrame {
         this.vh.CorreoUser.setText(CorreoUser.getText());
         this.vh.Inicial.setText(Inicial.getText());
         this.vh.setVisible(true);
+        this.vh.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel3ActionPerformed
 
