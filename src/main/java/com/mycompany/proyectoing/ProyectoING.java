@@ -82,23 +82,26 @@ public class ProyectoING {
         for(int i=0; i< 3; i++){
             ciudad1.agregarHotel(hoteles[i]);
         }
-        Ciudad ciudad2 = new Ciudad("Merida", 4, "Ciudad capital de la República Bolivariana de Venezuela, centro de la administración pública central, núcleo " +
-                "financiero, comercial y cultural más importante de la nación. Se encuentra ubicada en la zona centro-norte del país, a unos 15 Km.");
+        Ciudad ciudad2 = new Ciudad("Merida", 4, "Es una de las principales localidades de los Andes venezolanos. Se encuentra ubicada sobre una meseta en medio de la región, entre las sierras montañosas de La Culata y Nevada, los parques "
+                + "nacionales homónimos, dicha condición geográfica la posiciona como un importante centro turístico."
+                + "La localidad de Mérida se encuentra situada a una altitud de 1.820 m s. n. m., asentándose sobre una meseta enclavada en el valle medio del río Chama, delimitada por el mismo y que extiende a lo largo de su cuenca");
         for(int i=3; i< 6; i++){
             ciudad2.agregarHotel(hoteles[i]);
         }
-        Ciudad ciudad3 = new Ciudad("Bogota", 2, "Ciudad capital de la República Bolivariana de Venezuela, centro de la administración pública central, núcleo " +
-                "financiero, comercial y cultural más importante de la nación. Se encuentra ubicada en la zona centro-norte del país, a unos 15 Km.");
+        Ciudad ciudad3 = new Ciudad("Bogota", 2, "Es la capital y ciudad más poblada de Colombia. Tienen más de siete millones de habitantes, lo que la "
+                + "convierte en una de las grandes urbes del continente sudamericano."
+                + " cuenta con diversas actividades y acervos culturales, es sede de importantes universidades, y acoge eventos de nivel internacional.");
         for(int i=6; i< 9; i++){
             ciudad3.agregarHotel(hoteles[i]);
         }
-        Ciudad ciudad4 = new Ciudad("Nueva York", 4, "Ciudad capital de la República Bolivariana de Venezuela, centro de la administración pública central, núcleo " +
-                "financiero, comercial y cultural más importante de la nación. Se encuentra ubicada en la zona centro-norte del país, a unos 15 Km.");
+        Ciudad ciudad4 = new Ciudad("Nueva York", 4, "Es la ciudad más poblada en los Estados Unidos de América, y la segunda aglomeración urbana "
+                + "del continente. Es el centro del área metropolitana de Nueva York, la cual está entre las cinco aglomeraciones urbanas más grandes del mundo"
+                + "influencia a escala global en los medios de comunicación, la política, la educación, la arquitectura, el entretenimiento, las artes y la moda..");
         for(int i=9; i< 12; i++){
             ciudad4.agregarHotel(hoteles[i]);
         }
-        Ciudad ciudad5 = new Ciudad("Tokyo", 5, "Ciudad capital de la República Bolivariana de Venezuela, centro de la administración pública central, núcleo " +
-                "financiero, comercial y cultural más importante de la nación. Se encuentra ubicada en la zona centro-norte del país, a unos 15 Km.");
+        Ciudad ciudad5 = new Ciudad("Tokyo", 5, "Capital del Japón, con sus 14 millones de habitantes se confirma la metrópoli más populosa del país y una de las mayores ciudades del mundo. Su historia se remonta a 1603 cuando Ieyasu Tokugawa estableció el gobierno feudal (el shogunato) y desde entonces goza de un próspero desarrollo. Tokio se identifica como el centro político, económico y cultural de Japón y, en base a la subdivisión administrativa "
+                + "del territorio, se divide en 23 distritos que incluyen 26 ciudades, 5 ciudadelas y 8 aldeas.");
         for(int i=12; i< 15; i++){
             ciudad5.agregarHotel(hoteles[i]);
         }
