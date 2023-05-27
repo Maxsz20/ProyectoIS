@@ -13,11 +13,10 @@ import java.util.List;
  */
 public class VistaHotel extends javax.swing.JFrame {
 
-   
     private VistaCiudad vc;
     private VistaHabitaciones vha;
     public List<Habitacion> habitaciones;
-    
+
     public VistaCiudad getVc() {
         return vc;
     }
@@ -33,15 +32,16 @@ public class VistaHotel extends javax.swing.JFrame {
     public void setVha(VistaHabitaciones vha) {
         this.vha = vha;
     }
-    
+
     public VistaHotel() {
         initComponents();
-        
+
         this.vha = new VistaHabitaciones();
         this.vha.setVh(this);
     }
+
     public Habitacion obtenerUnaHabitacion(int i) {
-        
+
         return habitaciones.get(i); // Obtener la primera habitación de la lista
     }
 
@@ -339,25 +339,24 @@ public class VistaHotel extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Habitacion habitacion;
-        
+
         habitacion = this.obtenerUnaHabitacion(0);
         this.vha.Tipo1.setText(habitacion.getTipo());
         this.vha.Nro1.setText(habitacion.getCapacidad());
-        
+
         habitacion = this.obtenerUnaHabitacion(1);
         this.vha.Tipo2.setText(habitacion.getTipo());
         this.vha.Nro2.setText(habitacion.getCapacidad());
-        
+
         habitacion = this.obtenerUnaHabitacion(2);
         this.vha.Tipo3.setText(habitacion.getTipo());
         this.vha.Nro3.setText(habitacion.getCapacidad());
-        
+
         habitacion = this.obtenerUnaHabitacion(3);
         this.vha.Tipo4.setText(habitacion.getTipo());
         this.vha.Nro4.setText(habitacion.getCapacidad());
-        
-        this.vha.habitacion = habitaciones;
-        System.out.println(habitacion);
+
+        this.vha.habitacion = this.habitaciones;
         this.vha.NombreHotel.setText(NombreHotel.getText());
         this.vha.setVisible(true);
         this.setVisible(false);

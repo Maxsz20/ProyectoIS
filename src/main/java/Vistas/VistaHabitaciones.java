@@ -89,10 +89,10 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         Tipo4 = new javax.swing.JLabel();
         Tipo3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Btn2 = new javax.swing.JButton();
+        Btn3 = new javax.swing.JButton();
+        Btn4 = new javax.swing.JButton();
+        Btn1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -247,43 +247,43 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setText("Persona(s)");
 
-        jButton1.setBackground(new java.awt.Color(11, 59, 89));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Reservar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Btn2.setBackground(new java.awt.Color(11, 59, 89));
+        Btn2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Btn2.setForeground(new java.awt.Color(255, 255, 255));
+        Btn2.setText("Reservar");
+        Btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Btn2ActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(11, 59, 89));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Reservar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Btn3.setBackground(new java.awt.Color(11, 59, 89));
+        Btn3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Btn3.setForeground(new java.awt.Color(255, 255, 255));
+        Btn3.setText("Reservar");
+        Btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Btn3ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(11, 59, 89));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Reservar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Btn4.setBackground(new java.awt.Color(11, 59, 89));
+        Btn4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Btn4.setForeground(new java.awt.Color(255, 255, 255));
+        Btn4.setText("Reservar");
+        Btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Btn4ActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(11, 59, 89));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Reservar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Btn1.setBackground(new java.awt.Color(11, 59, 89));
+        Btn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Btn1.setForeground(new java.awt.Color(255, 255, 255));
+        Btn1.setText("Reservar");
+        Btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                Btn1ActionPerformed(evt);
             }
         });
 
@@ -333,7 +333,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(216, 216, 216)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Tipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,7 +342,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(220, 220, 220)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Tipo3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -351,7 +351,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(217, 217, 217)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
@@ -361,7 +361,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(221, 221, 221)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
         );
         jPanel2Layout.setVerticalGroup(
@@ -372,14 +372,14 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tipo1)
                     .addComponent(jLabel11)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Nro1))
                 .addGap(47, 47, 47)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tipo2)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(Nro2))
                 .addGap(50, 50, 50)
@@ -388,7 +388,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Tipo3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel12)
                         .addComponent(Nro3)))
                 .addGap(49, 49, 49)
@@ -396,7 +396,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tipo4)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(Nro4))
                 .addGap(41, 41, 41))
@@ -449,36 +449,20 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        Habitacion habi;
-        
-        this.vp.Cantidad.setText(Nro1.getText());
-        this.vp.NombreHotel.setText(NombreHotel.getText());
-        this.vp.TipoHabitacion.setText(Tipo1.getText());
-        habi = this.obtenerUnaHabitacion(0);
-        this.vp.Precio.setText(habi.getPrecio());
-        this.vp.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2ActionPerformed
         
         Habitacion habi;
         
         this.vp.Cantidad.setText(Nro2.getText());
-        this.vp.TipoHabitacion.setText(Tipo2.getText());
         this.vp.NombreHotel.setText(NombreHotel.getText());
+        this.vp.TipoHabitacion.setText(Tipo1.getText());
         habi = this.obtenerUnaHabitacion(1);
-        
-        this.vp.Cantidad.setText(habi.getCapacidad());
-        this.vp.TipoHabitacion.setText(habi.getTipo());
         this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Btn2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn3ActionPerformed
         
         Habitacion habi;
         
@@ -486,13 +470,16 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.TipoHabitacion.setText(Tipo3.getText());
         this.vp.NombreHotel.setText(NombreHotel.getText());
         habi = this.obtenerUnaHabitacion(2);
+        
+        this.vp.Cantidad.setText(habi.getCapacidad());
+        this.vp.TipoHabitacion.setText(habi.getTipo());
         this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_Btn3ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       
+    private void Btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn4ActionPerformed
+        
         Habitacion habi;
         
         this.vp.Cantidad.setText(Nro4.getText());
@@ -502,7 +489,20 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_Btn4ActionPerformed
+
+    private void Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1ActionPerformed
+       
+        Habitacion habi;
+        
+        this.vp.Cantidad.setText(Nro1.getText());
+        this.vp.TipoHabitacion.setText(Tipo1.getText());
+        this.vp.NombreHotel.setText(NombreHotel.getText());
+        habi = this.obtenerUnaHabitacion(0);
+        this.vp.Precio.setText(habi.getPrecio());
+        this.vp.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -540,6 +540,10 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn1;
+    private javax.swing.JButton Btn2;
+    private javax.swing.JButton Btn3;
+    private javax.swing.JButton Btn4;
     public javax.swing.JLabel NombreHotel;
     public javax.swing.JLabel Nro1;
     public javax.swing.JLabel Nro2;
@@ -549,11 +553,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     public javax.swing.JLabel Tipo2;
     public javax.swing.JLabel Tipo3;
     public javax.swing.JLabel Tipo4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
