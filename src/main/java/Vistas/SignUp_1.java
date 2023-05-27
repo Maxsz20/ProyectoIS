@@ -19,6 +19,7 @@ public class SignUp_1 extends javax.swing.JFrame {
 
     
     private LandingPage lp;
+    private boolean usuarioExistente;
 
     public LandingPage getLp() {
         return lp;
@@ -26,6 +27,14 @@ public class SignUp_1 extends javax.swing.JFrame {
 
     public void setLp(LandingPage lp) {
         this.lp = lp;
+    }
+
+    public boolean isUsuarioExistente() {
+        return usuarioExistente;
+    }
+
+    public void setUsuarioExistente(boolean usuarioExistente) {
+        this.usuarioExistente = usuarioExistente;
     }
     
     /**
@@ -56,10 +65,10 @@ public class SignUp_1 extends javax.swing.JFrame {
         TextPass = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 0));
-        setPreferredSize(new java.awt.Dimension(1300, 1100));
         setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,6 +165,13 @@ public class SignUp_1 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
+        jButton4.setText("Regresar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -163,13 +179,17 @@ public class SignUp_1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(908, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 605, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(195, 195, 195))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -200,7 +220,7 @@ public class SignUp_1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 947, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,11 +246,11 @@ public class SignUp_1 extends javax.swing.JFrame {
         pass = TextPass.getText();
         pass2 = TextPass2.getText();
         Usuario nuevoUsuario = new Usuario();
-        boolean usuarioExistente = false;
+        this.setUsuarioExistente(false);
         
         for (Usuario usuario : listaUsuarios) {
             if (usuario.getEmail().equals(correo) && usuario.getContrasena().equals(pass)) {
-                usuarioExistente = true;
+                this.setUsuarioExistente(true);
                 break;
             }
         }
@@ -242,26 +262,49 @@ public class SignUp_1 extends javax.swing.JFrame {
             TextMail.setText("");
             TextPass.setText("");
             TextPass2.setText("");
-        } else {
+            
+        } else if(!(pass.equals(pass2))){
+             // Las contraseñas no coinciden , mostrar un mensaje de error
+            JOptionPane.showMessageDialog(null,"Las contraseñas no coinciden. Intente de nuevo");
+            TextMail.setText("");
+            TextPass.setText("");
+            TextPass2.setText("");
+        }else {
             // El usuario no está registrado, proceder con el registro
          
             // Crear objeto Usuario y agregarlo a la lista de usuarios
             nuevoUsuario.setEmail(correo);
             nuevoUsuario.setContrasena(pass);
             registro.registrarUsuario(nuevoUsuario);
+            
+            char inicial = TextMail.getText().charAt(0);
+            inicial = Character.toUpperCase(inicial);
+            this.lp.CorreoUser.setVisible(true);
+            this.lp.Icono.setVisible(true);
+            this.lp.CorreoUser.setText(TextMail.getText());
+            this.lp.Inicial.setText(String.valueOf(inicial));
+            
             JOptionPane.showMessageDialog(null,"Registrado con exito");
             TextMail.setText("");
             TextPass.setText("");
             TextPass2.setText("");
+            this.lp.RegistrarBtn.setVisible(false);
+            this.lp.SesionBtn.setVisible(false);
             this.setVisible(false);
             lp.setVisible(true);
-            // Resto del código para el registro exitoso
+           
         }
        
      
         //this.setVisible(false);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        this.lp.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,6 +349,7 @@ public class SignUp_1 extends javax.swing.JFrame {
     private javax.swing.JPasswordField TextPass;
     private javax.swing.JPasswordField TextPass2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

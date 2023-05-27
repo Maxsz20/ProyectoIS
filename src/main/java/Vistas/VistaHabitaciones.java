@@ -72,9 +72,10 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        Icono = new javax.swing.JPanel();
+        Inicial = new javax.swing.JLabel();
+        CorreoUser = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -114,21 +115,40 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 255, 204));
-        jLabel3.setText("Perfil");
-
         jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+
+        Icono.setBackground(new java.awt.Color(148, 152, 242));
+
+        Inicial.setBackground(new java.awt.Color(255, 255, 255));
+        Inicial.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Inicial.setText("I");
+
+        javax.swing.GroupLayout IconoLayout = new javax.swing.GroupLayout(Icono);
+        Icono.setLayout(IconoLayout);
+        IconoLayout.setHorizontalGroup(
+            IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IconoLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(Inicial)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        IconoLayout.setVerticalGroup(
+            IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IconoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(Inicial)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        CorreoUser.setBackground(new java.awt.Color(255, 255, 255));
+        CorreoUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CorreoUser.setForeground(new java.awt.Color(255, 255, 255));
+        CorreoUser.setText("Correo");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -137,13 +157,13 @@ public class VistaHabitaciones extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 517, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(112, 112, 112))
+                .addGap(53, 53, 53)
+                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CorreoUser)
+                .addGap(160, 160, 160))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,11 +175,12 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(CorreoUser)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -415,7 +436,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NombreHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,7 +455,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1428, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1397, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -458,6 +479,8 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.TipoHabitacion.setText(Tipo1.getText());
         habi = this.obtenerUnaHabitacion(1);
         this.vp.Precio.setText(habi.getPrecio());
+        this.vp.CorreoUser.setText(CorreoUser.getText());
+        this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn2ActionPerformed
@@ -474,6 +497,8 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.Cantidad.setText(habi.getCapacidad());
         this.vp.TipoHabitacion.setText(habi.getTipo());
         this.vp.Precio.setText(habi.getPrecio());
+        this.vp.CorreoUser.setText(CorreoUser.getText());
+        this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn3ActionPerformed
@@ -487,6 +512,8 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.NombreHotel.setText(NombreHotel.getText());
         habi = this.obtenerUnaHabitacion(3);
         this.vp.Precio.setText(habi.getPrecio());
+        this.vp.CorreoUser.setText(CorreoUser.getText());
+        this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn4ActionPerformed
@@ -500,6 +527,8 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp.NombreHotel.setText(NombreHotel.getText());
         habi = this.obtenerUnaHabitacion(0);
         this.vp.Precio.setText(habi.getPrecio());
+        this.vp.CorreoUser.setText(CorreoUser.getText());
+        this.vp.Inicial.setText(Inicial.getText());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn1ActionPerformed
@@ -544,6 +573,9 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     private javax.swing.JButton Btn2;
     private javax.swing.JButton Btn3;
     private javax.swing.JButton Btn4;
+    public javax.swing.JLabel CorreoUser;
+    public javax.swing.JPanel Icono;
+    public javax.swing.JLabel Inicial;
     public javax.swing.JLabel NombreHotel;
     public javax.swing.JLabel Nro1;
     public javax.swing.JLabel Nro2;
@@ -559,8 +591,6 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

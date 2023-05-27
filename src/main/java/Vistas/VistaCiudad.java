@@ -7,8 +7,6 @@ package Vistas;
 import ClasesObjetos.Habitacion;
 import ClasesObjetos.Hotel;
 import java.util.List;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 /**
  *
@@ -58,9 +56,10 @@ public class VistaCiudad extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        Icono = new javax.swing.JPanel();
+        Inicial = new javax.swing.JLabel();
+        CorreoUser = new javax.swing.JLabel();
         NombreCiudad = new javax.swing.JLabel();
         DescripcionCiudad = new javax.swing.JLabel();
         Alojamientos = new javax.swing.JLabel();
@@ -103,21 +102,40 @@ public class VistaCiudad extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 255, 204));
-        jLabel3.setText("Perfil");
-
         jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+
+        Icono.setBackground(new java.awt.Color(148, 152, 242));
+
+        Inicial.setBackground(new java.awt.Color(255, 255, 255));
+        Inicial.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Inicial.setText("I");
+
+        javax.swing.GroupLayout IconoLayout = new javax.swing.GroupLayout(Icono);
+        Icono.setLayout(IconoLayout);
+        IconoLayout.setHorizontalGroup(
+            IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IconoLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(Inicial)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        IconoLayout.setVerticalGroup(
+            IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IconoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(Inicial)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        CorreoUser.setBackground(new java.awt.Color(255, 255, 255));
+        CorreoUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CorreoUser.setForeground(new java.awt.Color(255, 255, 255));
+        CorreoUser.setText("Correo");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -126,13 +144,13 @@ public class VistaCiudad extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(112, 112, 112))
+                .addGap(78, 78, 78)
+                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CorreoUser)
+                .addGap(85, 85, 85))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,11 +162,12 @@ public class VistaCiudad extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)
+                        .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(CorreoUser)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         NombreCiudad.setBackground(new java.awt.Color(255, 255, 255));
@@ -402,7 +421,7 @@ public class VistaCiudad extends javax.swing.JFrame {
                     .addComponent(Panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1182, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -465,6 +484,8 @@ public class VistaCiudad extends javax.swing.JFrame {
         }
         this.vh.habitaciones = habitacionez;
         this.vh.DescripcionHotel.setText(DescripcionHotel2.getText());
+        this.vh.CorreoUser.setText(CorreoUser.getText());
+        this.vh.Inicial.setText(Inicial.getText());
         this.vh.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel2ActionPerformed
@@ -491,6 +512,8 @@ public class VistaCiudad extends javax.swing.JFrame {
         this.vh.habitaciones = habitacionez;
         this.vh.NombreHotel.setText(NombreHotel1.getText());
         this.vh.DescripcionHotel.setText(DescripcionHotel1.getText());
+        this.vh.CorreoUser.setText(CorreoUser.getText());
+        this.vh.Inicial.setText(Inicial.getText());
         this.vh.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel1ActionPerformed
@@ -517,6 +540,8 @@ public class VistaCiudad extends javax.swing.JFrame {
         this.vh.habitaciones = habitacionez;
         this.vh.NombreHotel.setText(NombreHotel3.getText());
         this.vh.DescripcionHotel.setText(DescripcionHotel3.getText());
+        this.vh.CorreoUser.setText(CorreoUser.getText());
+        this.vh.Inicial.setText(Inicial.getText());
         this.vh.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel3ActionPerformed
@@ -568,10 +593,13 @@ public class VistaCiudad extends javax.swing.JFrame {
     private javax.swing.JButton BtnHotel1;
     private javax.swing.JButton BtnHotel2;
     private javax.swing.JButton BtnHotel3;
+    public javax.swing.JLabel CorreoUser;
     public javax.swing.JLabel DescripcionCiudad;
     private javax.swing.JLabel DescripcionHotel1;
     private javax.swing.JLabel DescripcionHotel2;
     private javax.swing.JLabel DescripcionHotel3;
+    public javax.swing.JPanel Icono;
+    public javax.swing.JLabel Inicial;
     public javax.swing.JLabel Label13;
     private javax.swing.JLabel LabelHabitacion3;
     private javax.swing.JLabel LabelNro2;
@@ -588,8 +616,6 @@ public class VistaCiudad extends javax.swing.JFrame {
     private javax.swing.JPanel Panel3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;

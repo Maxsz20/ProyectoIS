@@ -9,14 +9,12 @@ import ClasesObjetos.Usuario;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author REVAN
- */
+
 public class Login extends javax.swing.JFrame {
 
     
     private LandingPage lp;
+    private boolean inicioSesionExitoso;
 
     public LandingPage getLp() {
         return lp;
@@ -24,6 +22,14 @@ public class Login extends javax.swing.JFrame {
 
     public void setLp(LandingPage lp) {
         this.lp = lp;
+    }
+
+    public boolean isInicioSesionExitoso() {
+        return inicioSesionExitoso;
+    }
+
+    public void setInicioSesionExitoso(boolean inicioSesionExitoso) {
+        this.inicioSesionExitoso = inicioSesionExitoso;
     }
     
     /**
@@ -198,7 +204,7 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 947, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,6 +221,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_TextMailActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         String correo, pass;
         RegistroUsuarios registro = new RegistroUsuarios("usuarios.txt");
         registro.cargarUsuarios();
@@ -222,11 +229,11 @@ public class Login extends javax.swing.JFrame {
         List<Usuario> listaUsuarios = registro.getListaUsuarios();  
         correo = TextMail.getText();
         pass = TextPass.getText();
-        boolean inicioSesionExitoso = false;
+        this.setInicioSesionExitoso(false);
 
         for (Usuario usuario : listaUsuarios) {
             if (usuario.getEmail().equals(correo) && usuario.getContrasena().equals(pass)) {
-                inicioSesionExitoso = true;
+                this.setInicioSesionExitoso(true);
                 break;
             }
         }
@@ -234,13 +241,16 @@ public class Login extends javax.swing.JFrame {
         if (inicioSesionExitoso) {
             // Inicio de sesión exitoso, realizar las acciones correspondientes
             
-            JOptionPane.showMessageDialog(null,"Sesion iniciada con exito");
+            char inicial = TextMail.getText().charAt(0);
+            inicial = Character.toUpperCase(inicial);
             this.lp.CorreoUser.setVisible(true);
             this.lp.Icono.setVisible(true);
             this.lp.CorreoUser.setText(TextMail.getText());
+            this.lp.Inicial.setText(String.valueOf(inicial));
+            
             this.lp.RegistrarBtn.setVisible(false);
             this.lp.SesionBtn.setVisible(false);
-            
+            JOptionPane.showMessageDialog(null,"Sesion iniciada con exito");
             this.setVisible(false);
             this.lp.setVisible(true);
         } else {

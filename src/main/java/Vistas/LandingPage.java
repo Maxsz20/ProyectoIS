@@ -6,7 +6,7 @@ package Vistas;
 
 import ClasesObjetos.Ciudad;
 import ClasesObjetos.Hotel;
-
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -91,7 +91,7 @@ public class LandingPage extends javax.swing.JFrame {
         SesionBtn = new javax.swing.JButton();
         RegistrarBtn = new javax.swing.JButton();
         Icono = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        Inicial = new javax.swing.JLabel();
         CorreoUser = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -160,8 +160,9 @@ public class LandingPage extends javax.swing.JFrame {
 
         Icono.setBackground(new java.awt.Color(148, 152, 242));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setText("I");
+        Inicial.setBackground(new java.awt.Color(255, 255, 255));
+        Inicial.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Inicial.setText("I");
 
         javax.swing.GroupLayout IconoLayout = new javax.swing.GroupLayout(Icono);
         Icono.setLayout(IconoLayout);
@@ -169,14 +170,14 @@ public class LandingPage extends javax.swing.JFrame {
             IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IconoLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jLabel5)
+                .addComponent(Inicial)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         IconoLayout.setVerticalGroup(
             IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IconoLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(jLabel5)
+                .addComponent(Inicial)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -199,14 +200,14 @@ public class LandingPage extends javax.swing.JFrame {
                 .addComponent(SesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(CorreoUser)
-                        .addGap(119, 119, 119))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))))
+                        .addGap(49, 49, 49)
+                        .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CorreoUser)))
+                .addGap(16, 16, 16))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,9 +219,9 @@ public class LandingPage extends javax.swing.JFrame {
                 .addComponent(SesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(CorreoUser)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -661,25 +662,31 @@ public class LandingPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SesionBtnActionPerformed
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
-        Ciudad ciudadSeleccionada = (Ciudad) ListadoCiudades.getSelectedItem();
+        if(this.lg.isInicioSesionExitoso() || this.sp.isUsuarioExistente()){
             
-            // Mostrar un mensaje con la información de la ciudad seleccionada
-            /*JOptionPane.showMessageDialog(null,
-                    "Nombre: " + ciudadSeleccionada.getNombre() + "\n" +
-                            "Ranking: " + ciudadSeleccionada.getCalificacion() + "\n" +
-                                    "Descripción: " + ciudadSeleccionada.getDescripcion());*/
-        Hotel[] hoteles = ciudadSeleccionada.getHoteles();
-        this.vc.hoteles = hoteles;
-        this.vc.NombreHotel1.setText(hoteles[0].getNombre());
-        this.vc.NroHabitacionesHotel1.setText(hoteles[0].getNroHabitaciones());
-        this.vc.NombreHotel2.setText(hoteles[1].getNombre());
-        this.vc.NroHabitacionesHotel2.setText(hoteles[1].getNroHabitaciones());
-        this.vc.NombreHotel3.setText(hoteles[2].getNombre());
-        this.vc.NroHabitacionesHotel3.setText(hoteles[2].getNroHabitaciones());
-        this.vc.NombreCiudad.setText(ciudadSeleccionada.getNombre());
-        this.vc.DescripcionCiudad.setText(StrToHtml(ciudadSeleccionada.getDescripcion()));
-        this.vc.setVisible(true);
-        this.setVisible(false);
+            Ciudad ciudadSeleccionada = (Ciudad) ListadoCiudades.getSelectedItem();
+
+            Hotel[] hoteles = ciudadSeleccionada.getHoteles();
+            this.vc.hoteles = hoteles;
+            this.vc.NombreHotel1.setText(hoteles[0].getNombre());
+            this.vc.NroHabitacionesHotel1.setText(hoteles[0].getNroHabitaciones());
+            
+            this.vc.NombreHotel2.setText(hoteles[1].getNombre());
+            this.vc.NroHabitacionesHotel2.setText(hoteles[1].getNroHabitaciones());
+            
+            this.vc.NombreHotel3.setText(hoteles[2].getNombre());
+            this.vc.NroHabitacionesHotel3.setText(hoteles[2].getNroHabitaciones());
+            
+            this.vc.NombreCiudad.setText(ciudadSeleccionada.getNombre());
+            this.vc.DescripcionCiudad.setText(StrToHtml(ciudadSeleccionada.getDescripcion()));
+            
+            this.vc.CorreoUser.setText(CorreoUser.getText());
+            this.vc.Inicial.setText(Inicial.getText());
+            this.vc.setVisible(true);
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null,"Debe estar con un perfil activo para avanzar");
+        }
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -739,6 +746,7 @@ public class LandingPage extends javax.swing.JFrame {
     private javax.swing.JButton Buscar;
     public javax.swing.JLabel CorreoUser;
     public javax.swing.JPanel Icono;
+    public javax.swing.JLabel Inicial;
     private javax.swing.JComboBox<Ciudad> ListadoCiudades;
     public javax.swing.JButton RegistrarBtn;
     public javax.swing.JButton SesionBtn;
@@ -748,7 +756,6 @@ public class LandingPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

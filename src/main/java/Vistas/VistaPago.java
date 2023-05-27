@@ -37,9 +37,10 @@ public class VistaPago extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        Icono = new javax.swing.JPanel();
+        Inicial = new javax.swing.JLabel();
+        CorreoUser = new javax.swing.JLabel();
         NombreHotel = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -53,6 +54,7 @@ public class VistaPago extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         Precio = new javax.swing.JLabel();
+        Precio1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,21 +69,40 @@ public class VistaPago extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 255, 204));
-        jLabel3.setText("Perfil");
-
         jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+
+        Icono.setBackground(new java.awt.Color(148, 152, 242));
+
+        Inicial.setBackground(new java.awt.Color(255, 255, 255));
+        Inicial.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Inicial.setText("I");
+
+        javax.swing.GroupLayout IconoLayout = new javax.swing.GroupLayout(Icono);
+        Icono.setLayout(IconoLayout);
+        IconoLayout.setHorizontalGroup(
+            IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IconoLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(Inicial)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        IconoLayout.setVerticalGroup(
+            IconoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IconoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(Inicial)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        CorreoUser.setBackground(new java.awt.Color(255, 255, 255));
+        CorreoUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CorreoUser.setForeground(new java.awt.Color(255, 255, 255));
+        CorreoUser.setText("Correo");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -90,13 +111,13 @@ public class VistaPago extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(112, 112, 112))
+                .addGap(67, 67, 67)
+                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CorreoUser)
+                .addGap(94, 94, 94))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,11 +129,12 @@ public class VistaPago extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGap(19, 19, 19)
+                        .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(CorreoUser)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         NombreHotel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -160,6 +182,10 @@ public class VistaPago extends javax.swing.JFrame {
         Precio.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Precio.setText("#");
 
+        Precio1.setBackground(new java.awt.Color(0, 0, 0));
+        Precio1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Precio1.setText("$");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -170,7 +196,9 @@ public class VistaPago extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Precio))
+                        .addComponent(Precio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Precio1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Cantidad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -193,7 +221,8 @@ public class VistaPago extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Precio1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
@@ -222,7 +251,7 @@ public class VistaPago extends javax.swing.JFrame {
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(187, 187, 187))))
         );
@@ -313,16 +342,18 @@ public class VistaPago extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel Cantidad;
+    public javax.swing.JLabel CorreoUser;
+    public javax.swing.JPanel Icono;
+    public javax.swing.JLabel Inicial;
     public javax.swing.JLabel NombreHotel;
     public javax.swing.JLabel Precio;
+    public javax.swing.JLabel Precio1;
     public javax.swing.JLabel TipoHabitacion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
