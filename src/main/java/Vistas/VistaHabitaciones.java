@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import ClasesObjetos.Habitacion;
+import java.util.List;
+
 /**
  *
  * @author Maxi
@@ -13,6 +16,7 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     private VistaHotel vh;
     private VistaPago vp;
     private VistaCiudad vc;
+    public List<Habitacion> habitacion;
 
     public VistaCiudad getVc() {
         return vc;
@@ -48,6 +52,11 @@ public class VistaHabitaciones extends javax.swing.JFrame {
         this.vp = new VistaPago();
         this.vp.setVha(this);
         
+    }
+    
+    public Habitacion obtenerUnaHabitacion(int i) {
+        
+        return habitacion.get(i); // Obtener la primera habitación de la lista
     }
 
     /**
@@ -436,31 +445,61 @@ public class VistaHabitaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
         this.vh.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        Habitacion habi;
+        
+        this.vp.Cantidad.setText(Nro1.getText());
         this.vp.NombreHotel.setText(NombreHotel.getText());
+        this.vp.TipoHabitacion.setText(Tipo1.getText());
+        habi = this.obtenerUnaHabitacion(0);
+        this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        Habitacion habi;
+        
+        this.vp.Cantidad.setText(Nro2.getText());
+        this.vp.TipoHabitacion.setText(Tipo2.getText());
         this.vp.NombreHotel.setText(NombreHotel.getText());
+        habi = this.obtenerUnaHabitacion(1);
+        
+        this.vp.Cantidad.setText(habi.getCapacidad());
+        this.vp.TipoHabitacion.setText(habi.getTipo());
+        this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
+        Habitacion habi;
+        
+        this.vp.Cantidad.setText(Nro3.getText());
+        this.vp.TipoHabitacion.setText(Tipo3.getText());
         this.vp.NombreHotel.setText(NombreHotel.getText());
+        habi = this.obtenerUnaHabitacion(2);
+        this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       
+        Habitacion habi;
+        
+        this.vp.Cantidad.setText(Nro4.getText());
+        this.vp.TipoHabitacion.setText(Tipo4.getText());
         this.vp.NombreHotel.setText(NombreHotel.getText());
+        habi = this.obtenerUnaHabitacion(3);
+        this.vp.Precio.setText(habi.getPrecio());
         this.vp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed

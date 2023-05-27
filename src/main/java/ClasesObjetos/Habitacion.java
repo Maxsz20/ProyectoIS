@@ -54,6 +54,5 @@ public class Habitacion {
     public void setCaracteristicas(String[] caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
-    
-           
+            
 }

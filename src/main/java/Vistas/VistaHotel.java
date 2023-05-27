@@ -339,6 +339,7 @@ public class VistaHotel extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Habitacion habitacion;
+        
         habitacion = this.obtenerUnaHabitacion(0);
         this.vha.Tipo1.setText(habitacion.getTipo());
         this.vha.Nro1.setText(habitacion.getCapacidad());
@@ -355,6 +356,8 @@ public class VistaHotel extends javax.swing.JFrame {
         this.vha.Tipo4.setText(habitacion.getTipo());
         this.vha.Nro4.setText(habitacion.getCapacidad());
         
+        this.vha.habitacion = habitaciones;
+        System.out.println(habitacion);
         this.vha.NombreHotel.setText(NombreHotel.getText());
         this.vha.setVisible(true);
         this.setVisible(false);
