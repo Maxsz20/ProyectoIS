@@ -2,21 +2,57 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.proyectoing;
+package Vistas;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import ClasesObjetos.Ciudad;
+import ClasesObjetos.Hotel;
+
 
 /**
  *
  * @author Maxi
  */
 public class LandingPage extends javax.swing.JFrame {
+    
+    private SignUp_1 sp;
+    private Login lg;
+    private VistaCiudad vc;
 
+    public Login getLg() {
+        return lg;
+    }
+
+    public void setLg(Login lg) {
+        this.lg = lg;
+    }
+
+    
+    
+    public SignUp_1 getSp() {
+        return sp;
+    }
+
+    public void setSp(SignUp_1 sp) {
+        this.sp = sp;
+    }
+
+    public VistaCiudad getVc() {
+        return vc;
+    }
+
+    public void setVc(VistaCiudad vc) {
+        this.vc = vc;
+    }
+    public String StrToHtml(String texto){
+           return "<html>" + texto + "</html>";
+    }
     /**
      * Creates new form LandingPage
+     * @param ciudad1
+     * @param ciudad2
+     * @param ciudad3
+     * @param ciudad4
+     * @param ciudad5
      */
      public void recibirCiudades(Ciudad ciudad1, Ciudad ciudad2, Ciudad ciudad3, Ciudad ciudad4, Ciudad ciudad5) {
          ListadoCiudades.addItem(ciudad1);
@@ -28,9 +64,12 @@ public class LandingPage extends javax.swing.JFrame {
      }
     public LandingPage() {
         initComponents();
-        
-        
-       
+        this.sp = new SignUp_1();
+        this.lg = new Login();
+        this.vc = new VistaCiudad();
+        this.sp.setLp(this);
+        this.lg.setLp(this);
+        this.vc.setLp(this);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +85,7 @@ public class LandingPage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        RegistrarBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -94,7 +133,12 @@ public class LandingPage extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Registrarse");
+        RegistrarBtn.setText("Registrarse");
+        RegistrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -106,7 +150,7 @@ public class LandingPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 532, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
         jPanel3Layout.setVerticalGroup(
@@ -120,7 +164,7 @@ public class LandingPage extends javax.swing.JFrame {
                         .addGap(66, 66, 66)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(4, 4, 4)))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -532,17 +576,30 @@ public class LandingPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.lg.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
         Ciudad ciudadSeleccionada = (Ciudad) ListadoCiudades.getSelectedItem();
             
             // Mostrar un mensaje con la información de la ciudad seleccionada
-            JOptionPane.showMessageDialog(null,
+            /*JOptionPane.showMessageDialog(null,
                     "Nombre: " + ciudadSeleccionada.getNombre() + "\n" +
                             "Ranking: " + ciudadSeleccionada.getCalificacion() + "\n" +
-                                    "Descripción: " + ciudadSeleccionada.getDescripcion());
+                                    "Descripción: " + ciudadSeleccionada.getDescripcion());*/
+        Hotel[] hoteles = ciudadSeleccionada.getHoteles();
+        this.vc.hoteles = hoteles;
+        this.vc.NombreHotel1.setText(hoteles[0].getNombre());
+        this.vc.NroHabitacionesHotel1.setText(hoteles[0].getNroHabitaciones());
+        this.vc.NombreHotel2.setText(hoteles[1].getNombre());
+        this.vc.NroHabitacionesHotel2.setText(hoteles[1].getNroHabitaciones());
+        this.vc.NombreHotel3.setText(hoteles[2].getNombre());
+        this.vc.NroHabitacionesHotel3.setText(hoteles[2].getNroHabitaciones());
+        this.vc.NombreCiudad.setText(ciudadSeleccionada.getNombre());
+        this.vc.DescripcionCiudad.setText(StrToHtml(ciudadSeleccionada.getDescripcion()));
+        this.vc.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -557,6 +614,13 @@ public class LandingPage extends javax.swing.JFrame {
         // Obtener la ciudad seleccionada
             
     }//GEN-LAST:event_ListadoCiudadesActionPerformed
+
+    private void RegistrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarBtnActionPerformed
+       
+        this.sp.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_RegistrarBtnActionPerformed
     
     /**
      * @param args the command line arguments
@@ -594,8 +658,8 @@ public class LandingPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;
     private javax.swing.JComboBox<Ciudad> ListadoCiudades;
+    private javax.swing.JButton RegistrarBtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
@@ -622,4 +686,5 @@ public class LandingPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }

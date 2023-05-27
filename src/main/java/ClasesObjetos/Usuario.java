@@ -2,11 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyectoing;
+package ClasesObjetos;
 
-import java.awt.List;
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  *
@@ -19,16 +17,13 @@ public class Usuario implements Serializable {
     private String contrasena;
     private String telefono;
 
+    public Usuario() {
+    }
+
+    
     public Usuario(String email, String contrasena) {
         this.email = email;
         this.contrasena = contrasena;
-    }
-    
-    public Usuario(String nombre, String email, String contrasena, String telefono) {
-        this.nombre = nombre;
-        this.email = email;
-        this.contrasena = contrasena;
-        this.telefono = telefono;
     }
 
     public String getNombre() {
