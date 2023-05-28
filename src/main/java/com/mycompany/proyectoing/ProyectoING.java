@@ -10,22 +10,21 @@ import Vistas.LandingPage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
-/**
- *
- * @author Maxi
- */
 public class ProyectoING {
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
+        //Se inicia el programa con la Pagina Principal
         LandingPage l = new LandingPage();
         l.setVisible(true);
-        crearCiudades(l, crearHoteles());
+        
+        crearCiudades(l, crearHoteles()); //Se crean las ciudades y hoteles
        
     }
     
     public static Hotel[] crearHoteles(){
+        
+        //En esta funcion se crean las habitaciones, las cuales se van insertando a los hoteles que se van creando
         
         Hotel[] hoteles = new Hotel[15]; 
         hoteles[0] = new Hotel("Hotel Caracas Suites", 3, "30");
@@ -77,6 +76,9 @@ public class ProyectoING {
     }
     
     public static void crearCiudades(LandingPage l, Hotel[] hoteles){
+        
+        //En esta funcion se crean las ciudades y se insertan los hoteles ya creados anteriormente
+        
         Ciudad ciudad1 = new Ciudad("Caracas", 3, "Ciudad capital de la República Bolivariana de Venezuela, centro de la administración pública central, núcleo " +
                 "financiero, comercial y cultural más importante de la nación. Se encuentra ubicada en la zona centro-norte del país, a unos 15 Km.");
         for(int i=0; i< 3; i++){
@@ -106,6 +108,7 @@ public class ProyectoING {
             ciudad5.agregarHotel(hoteles[i]);
         }
         
+        //Se envian las ciudades a la Pagina principal para tener su informacion
         l.recibirCiudades(ciudad1, ciudad2, ciudad3, ciudad4, ciudad5);
     }
 }

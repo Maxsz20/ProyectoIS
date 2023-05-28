@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- * @author Maxi
- */
 public class Hotel {
     private String nombre;
     private int ranking;

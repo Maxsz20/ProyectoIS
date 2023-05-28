@@ -6,15 +6,9 @@ package Vistas;
 
 import ClasesObjetos.RegistroUsuarios;
 import ClasesObjetos.Usuario;
-import java.util.HashSet;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-
-/**
- *
- * @author REVAN
- */
 public class SignUp_1 extends javax.swing.JFrame {
 
     
@@ -59,13 +53,13 @@ public class SignUp_1 extends javax.swing.JFrame {
         TextMail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        RegistrarseBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         TextPass2 = new javax.swing.JPasswordField();
         TextPass = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        RegresarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 0));
@@ -98,19 +92,23 @@ public class SignUp_1 extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("E-mail");
 
-        jButton1.setBackground(new java.awt.Color(11, 59, 89));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Regístrate");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RegistrarseBtn.setBackground(new java.awt.Color(11, 59, 89));
+        RegistrarseBtn.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        RegistrarseBtn.setForeground(new java.awt.Color(255, 255, 255));
+        RegistrarseBtn.setText("Regístrate");
+        RegistrarseBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RegistrarseBtnActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Confirm Password");
+
+        TextPass2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        TextPass.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -133,7 +131,7 @@ public class SignUp_1 extends javax.swing.JFrame {
                             .addComponent(TextMail, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(RegistrarseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -154,7 +152,7 @@ public class SignUp_1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextPass2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegistrarseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -165,10 +163,10 @@ public class SignUp_1 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        RegresarBtn.setText("Regresar");
+        RegresarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                RegresarBtnActionPerformed(evt);
             }
         });
 
@@ -180,7 +178,7 @@ public class SignUp_1 extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 605, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(195, 195, 195))
         );
         jPanel1Layout.setVerticalGroup(
@@ -188,7 +186,7 @@ public class SignUp_1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -236,7 +234,7 @@ public class SignUp_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextMailActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegistrarseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseBtnActionPerformed
         String correo, pass, pass2;
         RegistroUsuarios registro = new RegistroUsuarios("usuarios.txt");
         registro.cargarUsuarios();
@@ -283,6 +281,7 @@ public class SignUp_1 extends javax.swing.JFrame {
             this.lp.Icono.setVisible(true);
             this.lp.CorreoUser.setText(TextMail.getText());
             this.lp.Inicial.setText(String.valueOf(inicial));
+            this.lp.BtnPerfil.setVisible(true);
             
             JOptionPane.showMessageDialog(null,"Registrado con exito");
             TextMail.setText("");
@@ -294,17 +293,14 @@ public class SignUp_1 extends javax.swing.JFrame {
             lp.setVisible(true);
            
         }
-       
-     
-        //this.setVisible(false);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegistrarseBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
 
         this.lp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_RegresarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,11 +341,11 @@ public class SignUp_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RegistrarseBtn;
+    private javax.swing.JButton RegresarBtn;
     private javax.swing.JTextField TextMail;
     private javax.swing.JPasswordField TextPass;
     private javax.swing.JPasswordField TextPass2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

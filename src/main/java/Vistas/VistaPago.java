@@ -6,10 +6,6 @@ package Vistas;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Maxi
- */
 public class VistaPago extends javax.swing.JFrame {
 
     private VistaHabitaciones vha;
@@ -48,7 +44,7 @@ public class VistaPago extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        RegresarBtn = new javax.swing.JButton();
         Icono = new javax.swing.JPanel();
         Inicial = new javax.swing.JLabel();
         CorreoUser = new javax.swing.JLabel();
@@ -66,7 +62,7 @@ public class VistaPago extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         Precio = new javax.swing.JLabel();
         Precio1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        PagarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,10 +76,10 @@ public class VistaPago extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        RegresarBtn.setText("Regresar");
+        RegresarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                RegresarBtnActionPerformed(evt);
             }
         });
 
@@ -123,7 +119,7 @@ public class VistaPago extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
                 .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -138,7 +134,7 @@ public class VistaPago extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,10 +144,11 @@ public class VistaPago extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        NombreHotel.setBackground(new java.awt.Color(255, 255, 255));
         NombreHotel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         NombreHotel.setText("Nombre de Hotel");
 
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("Reserva");
 
@@ -237,13 +234,13 @@ public class VistaPago extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(11, 59, 89));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Pagar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        PagarBtn.setBackground(new java.awt.Color(11, 59, 89));
+        PagarBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PagarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        PagarBtn.setText("Pagar");
+        PagarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                PagarBtnActionPerformed(evt);
             }
         });
 
@@ -266,7 +263,7 @@ public class VistaPago extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PagarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(187, 187, 187))))
@@ -290,7 +287,7 @@ public class VistaPago extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PagarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(378, Short.MAX_VALUE))
         );
@@ -315,15 +312,15 @@ public class VistaPago extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
         
         this.vha.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_RegresarBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void PagarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBtnActionPerformed
          if(Entrada.getText().isEmpty() || Salida.getText().isEmpty()){
-            
+            //Si el usuario le falta algun campo por llenar
             JOptionPane.showMessageDialog(null,"Error: debe introducir las fechas de entrada y salida","Error", JOptionPane.ERROR_MESSAGE);
             
         }else{
@@ -334,7 +331,7 @@ public class VistaPago extends javax.swing.JFrame {
             this.lp.setVisible(true);
             this.setVisible(false);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_PagarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,12 +375,12 @@ public class VistaPago extends javax.swing.JFrame {
     public javax.swing.JPanel Icono;
     public javax.swing.JLabel Inicial;
     public javax.swing.JLabel NombreHotel;
+    private javax.swing.JButton PagarBtn;
     public javax.swing.JLabel Precio;
     public javax.swing.JLabel Precio1;
+    private javax.swing.JButton RegresarBtn;
     private javax.swing.JTextField Salida;
     public javax.swing.JLabel TipoHabitacion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

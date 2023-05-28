@@ -6,10 +6,6 @@ package ClasesObjetos;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Maxi
- */
 public class Usuario implements Serializable {
 
     private String nombre;

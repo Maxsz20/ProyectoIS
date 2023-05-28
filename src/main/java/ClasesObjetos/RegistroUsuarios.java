@@ -4,10 +4,6 @@
  */
 package ClasesObjetos;
 
-/**
- *
- * @author Maxi
- */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;

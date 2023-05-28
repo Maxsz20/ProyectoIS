@@ -7,10 +7,6 @@ package Vistas;
 import ClasesObjetos.Habitacion;
 import java.util.List;
 
-/**
- *
- * @author Maxi
- */
 public class VistaHotel extends javax.swing.JFrame {
 
     private VistaCiudad vc;
@@ -68,7 +64,7 @@ public class VistaHotel extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        RegresarBtn = new javax.swing.JButton();
         Icono = new javax.swing.JPanel();
         Inicial = new javax.swing.JLabel();
         CorreoUser = new javax.swing.JLabel();
@@ -77,7 +73,7 @@ public class VistaHotel extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        VistaHabitacionBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -103,10 +99,10 @@ public class VistaHotel extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        RegresarBtn.setText("Regresar");
+        RegresarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                RegresarBtnActionPerformed(evt);
             }
         });
 
@@ -146,7 +142,7 @@ public class VistaHotel extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74)
                 .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -161,7 +157,7 @@ public class VistaHotel extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -171,11 +167,15 @@ public class VistaHotel extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        NombreHotel.setBackground(new java.awt.Color(255, 255, 255));
         NombreHotel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         NombreHotel.setText("Nombre del Hotel");
 
         DescripcionHotel.setBackground(new java.awt.Color(255, 255, 255));
         DescripcionHotel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jPanel4.setBackground(new java.awt.Color(118, 124, 127));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -188,6 +188,9 @@ public class VistaHotel extends javax.swing.JFrame {
             .addGap(0, 358, Short.MAX_VALUE)
         );
 
+        jPanel5.setBackground(new java.awt.Color(118, 124, 127));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -198,6 +201,9 @@ public class VistaHotel extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 161, Short.MAX_VALUE)
         );
+
+        jPanel6.setBackground(new java.awt.Color(118, 124, 127));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -210,16 +216,17 @@ public class VistaHotel extends javax.swing.JFrame {
             .addGap(0, 161, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(11, 59, 89));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Elegir Habitacion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        VistaHabitacionBtn.setBackground(new java.awt.Color(11, 59, 89));
+        VistaHabitacionBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        VistaHabitacionBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VistaHabitacionBtn.setText("Elegir Habitacion");
+        VistaHabitacionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                VistaHabitacionBtnActionPerformed(evt);
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Comentarios");
 
@@ -243,14 +250,14 @@ public class VistaHotel extends javax.swing.JFrame {
 
         DescripcionHotel2.setBackground(new java.awt.Color(255, 255, 255));
         DescripcionHotel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        DescripcionHotel2.setText("<html>Me encanto el hotel, muy bonita la vista y el hospedaje es muy facil de hacer, lo unico es que me gustaria que en los retretes hubiera mas toallas y mas jabones</html>");
+        DescripcionHotel2.setText("<html>El hotel muy bien, lleve a mis sobrinos y les encanto jugar en la piscina que esta muy bien cuidada, si quieren pasar unas buenas vacaciones este es su lugar</html>");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Maximiliano Barboza");
 
         DescripcionHotel3.setBackground(new java.awt.Color(255, 255, 255));
         DescripcionHotel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        DescripcionHotel3.setText("<html>Me encanto el hotel, muy bonita la vista y el hospedaje es muy facil de hacer, lo unico es que me gustaria que en los retretes hubiera mas toallas y mas jabones</html>");
+        DescripcionHotel3.setText("<html>No me gusto nada el hotel, la verdad la pero experiencia que he tenido en todos mis aventuras, cero recomendado</html>");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -275,7 +282,7 @@ public class VistaHotel extends javax.swing.JFrame {
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(DescripcionHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 1029, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(NombreHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(VistaHabitacionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DescripcionHotel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1041, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
@@ -308,7 +315,7 @@ public class VistaHotel extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VistaHabitacionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel5)
                 .addGap(4, 4, 4)
@@ -325,7 +332,7 @@ public class VistaHotel extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DescripcionHotel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(1067, Short.MAX_VALUE)
@@ -356,18 +363,20 @@ public class VistaHotel extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 917, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
         this.vc.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_RegresarBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void VistaHabitacionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VistaHabitacionBtnActionPerformed
+        //En este boton se pasa la informacion de las habitaciones del hotel escogido a la siguiente vista
+        
         Habitacion habitacion;
 
         habitacion = this.obtenerUnaHabitacion(0);
@@ -393,7 +402,7 @@ public class VistaHotel extends javax.swing.JFrame {
         this.vha.setVisible(true);
         this.vha.setLp(this.lp);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_VistaHabitacionBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -440,8 +449,8 @@ public class VistaHotel extends javax.swing.JFrame {
     public javax.swing.JPanel Icono;
     public javax.swing.JLabel Inicial;
     public javax.swing.JLabel NombreHotel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton RegresarBtn;
+    private javax.swing.JButton VistaHabitacionBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

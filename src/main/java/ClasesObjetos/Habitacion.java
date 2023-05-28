@@ -5,10 +5,6 @@
 package ClasesObjetos;
 
 
-/**
- *
- * @author Maxi
- */
 public class Habitacion {
     
     private String tipo;
@@ -20,7 +16,6 @@ public class Habitacion {
         this.tipo = tipo;
         this.capacidad = capacidad;
         this.precio = precio;
-        this.caracteristicas = caracteristicas;
     }
     
     public String getTipo() {
@@ -45,14 +40,5 @@ public class Habitacion {
 
     public void setPrecio(String precio) {
         this.precio = precio;
-    }
-
-    public String[] getCaracteristicas() {
-        return caracteristicas;
-    }
-
-    public void setCaracteristicas(String[] caracteristicas) {
-        this.caracteristicas = caracteristicas;
-    }
-            
+    }  
 }

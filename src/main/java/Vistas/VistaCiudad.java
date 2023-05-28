@@ -8,10 +8,6 @@ import ClasesObjetos.Habitacion;
 import ClasesObjetos.Hotel;
 import java.util.List;
 
-/**
- *
- * @author Maxi
- */
 public class VistaCiudad extends javax.swing.JFrame {
     
     private LandingPage lp;
@@ -41,8 +37,6 @@ public class VistaCiudad extends javax.swing.JFrame {
         this.vh = new VistaHotel();
         this.vh.setVc(this);
     }
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,7 +50,7 @@ public class VistaCiudad extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        RegresarBtn = new javax.swing.JButton();
         Icono = new javax.swing.JPanel();
         Inicial = new javax.swing.JLabel();
         CorreoUser = new javax.swing.JLabel();
@@ -102,10 +96,10 @@ public class VistaCiudad extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WonderLustReserve");
 
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        RegresarBtn.setText("Regresar");
+        RegresarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                RegresarBtnActionPerformed(evt);
             }
         });
 
@@ -145,7 +139,7 @@ public class VistaCiudad extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78)
                 .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -160,7 +154,7 @@ public class VistaCiudad extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(RegresarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -189,6 +183,9 @@ public class VistaCiudad extends javax.swing.JFrame {
         Panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
         NombreHotel2.setText("Nombre del Hotel");
+
+        jPanel7.setBackground(new java.awt.Color(118, 124, 127));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -263,6 +260,9 @@ public class VistaCiudad extends javax.swing.JFrame {
         NombreHotel1.setBackground(new java.awt.Color(255, 255, 255));
         NombreHotel1.setText("Nombre del Hotel");
 
+        jPanel8.setBackground(new java.awt.Color(118, 124, 127));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -336,6 +336,9 @@ public class VistaCiudad extends javax.swing.JFrame {
         Panel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
         NombreHotel3.setText("Nombre del Hotel");
+
+        jPanel9.setBackground(new java.awt.Color(118, 124, 127));
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -420,7 +423,7 @@ public class VistaCiudad extends javax.swing.JFrame {
                     .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -456,7 +459,7 @@ public class VistaCiudad extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE))
         );
 
         pack();
@@ -480,12 +483,13 @@ public class VistaCiudad extends javax.swing.JFrame {
         if (hotelEncontrado != null) {
             // Se encontró el hotel, puedes utilizar las habitaciones de ese hotel
             habitacionez = hotelEncontrado.getHabitaciones();
-            // ... Realiza las operaciones que necesites con las habitaciones del hotel encontrado ...
         }
+        
         this.vh.habitaciones = habitacionez;
         this.vh.DescripcionHotel.setText(DescripcionHotel2.getText());
         this.vh.CorreoUser.setText(CorreoUser.getText());
         this.vh.Inicial.setText(Inicial.getText());
+        
         this.vh.setVisible(true);
         this.vh.setLp(this.lp);
         this.setVisible(false);
@@ -508,13 +512,14 @@ public class VistaCiudad extends javax.swing.JFrame {
         if (hotelEncontrado != null) {
             // Se encontró el hotel, puedes utilizar las habitaciones de ese hotel
             habitacionez = hotelEncontrado.getHabitaciones();
-            // ... Realiza las operaciones que necesites con las habitaciones del hotel encontrado ...
         }
+        
         this.vh.habitaciones = habitacionez;
         this.vh.NombreHotel.setText(NombreHotel1.getText());
         this.vh.DescripcionHotel.setText(DescripcionHotel1.getText());
         this.vh.CorreoUser.setText(CorreoUser.getText());
         this.vh.Inicial.setText(Inicial.getText());
+        
         this.vh.setVisible(true);
         this.vh.setLp(this.lp);
         this.setVisible(false);
@@ -537,23 +542,24 @@ public class VistaCiudad extends javax.swing.JFrame {
         if (hotelEncontrado != null) {
             // Se encontró el hotel, puedes utilizar las habitaciones de ese hotel
             habitacionez = hotelEncontrado.getHabitaciones();
-            // ... Realiza las operaciones que necesites con las habitaciones del hotel encontrado ...
         }
+        
         this.vh.habitaciones = habitacionez;
         this.vh.NombreHotel.setText(NombreHotel3.getText());
         this.vh.DescripcionHotel.setText(DescripcionHotel3.getText());
         this.vh.CorreoUser.setText(CorreoUser.getText());
         this.vh.Inicial.setText(Inicial.getText());
+        
         this.vh.setVisible(true);
         this.vh.setLp(this.lp);
         this.setVisible(false);
     }//GEN-LAST:event_BtnHotel3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
     
         this.lp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_RegresarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -617,7 +623,7 @@ public class VistaCiudad extends javax.swing.JFrame {
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel2;
     private javax.swing.JPanel Panel3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton RegresarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

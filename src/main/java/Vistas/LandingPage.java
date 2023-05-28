@@ -8,16 +8,13 @@ import ClasesObjetos.Ciudad;
 import ClasesObjetos.Hotel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Maxi
- */
 public class LandingPage extends javax.swing.JFrame {
     
     private SignUp_1 sp;
     private Login lg;
     private VistaCiudad vc;
     private VistaPago vp;
+    private VistaPerfil vpe;
 
     public Login getLg() {
         return lg;
@@ -50,40 +47,47 @@ public class LandingPage extends javax.swing.JFrame {
     public void setVp(VistaPago vp) {
         this.vp = vp;
     }
+
+    public VistaPerfil getVpe() {
+        return vpe;
+    }
+
+    public void setVpe(VistaPerfil vpe) {
+        this.vpe = vpe;
+    }
     
     public String StrToHtml(String texto){
            return "<html>" + texto + "</html>";
     }
-    /**
-     * Creates new form LandingPage
-     * @param ciudad1
-     * @param ciudad2
-     * @param ciudad3
-     * @param ciudad4
-     * @param ciudad5
-     */
+    
      public void recibirCiudades(Ciudad ciudad1, Ciudad ciudad2, Ciudad ciudad3, Ciudad ciudad4, Ciudad ciudad5) {
-         ListadoCiudades.addItem(ciudad1);
-         ListadoCiudades.addItem(ciudad2);
-         ListadoCiudades.addItem(ciudad3);
-         ListadoCiudades.addItem(ciudad4);
-         ListadoCiudades.addItem(ciudad5);
+        
+        // Se recibe las ciudades y se insertan dentro del componenete de seleccion
+        ListadoCiudades.addItem(ciudad1);
+        ListadoCiudades.addItem(ciudad2);
+        ListadoCiudades.addItem(ciudad3);
+        ListadoCiudades.addItem(ciudad4);
+        ListadoCiudades.addItem(ciudad5);
         
      }
     public LandingPage() {
         initComponents();
         this.Icono.setVisible(false);
         this.CorreoUser.setVisible(false);
+        this.BtnPerfil.setVisible(false);
         
+        //Pasamos las vistas por referencia desde la principal
         this.sp = new SignUp_1();
         this.lg = new Login();
         this.vc = new VistaCiudad();
         this.vp = new VistaPago();
+        this.vpe = new VistaPerfil();
         
         this.sp.setLp(this);
         this.lg.setLp(this);
         this.vc.setLp(this);
         this.vp.setLp(this);
+        this.vpe.setLp(this);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -105,6 +109,7 @@ public class LandingPage extends javax.swing.JFrame {
         Icono = new javax.swing.JPanel();
         Inicial = new javax.swing.JLabel();
         CorreoUser = new javax.swing.JLabel();
+        BtnPerfil = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -146,6 +151,7 @@ public class LandingPage extends javax.swing.JFrame {
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1320, 1200));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1320, 1900));
 
         jPanel3.setBackground(new java.awt.Color(62, 120, 233));
@@ -198,10 +204,21 @@ public class LandingPage extends javax.swing.JFrame {
         CorreoUser.setForeground(new java.awt.Color(255, 255, 255));
         CorreoUser.setText("Correo");
 
+        BtnPerfil.setBackground(new java.awt.Color(11, 59, 89));
+        BtnPerfil.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        BtnPerfil.setForeground(new java.awt.Color(255, 255, 255));
+        BtnPerfil.setText("Perfil");
+        BtnPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPerfilActionPerformed(evt);
+            }
+        });
+
         jLayeredPane1.setLayer(SesionBtn, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(RegistrarBtn, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Icono, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(CorreoUser, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(BtnPerfil, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -214,28 +231,32 @@ public class LandingPage extends javax.swing.JFrame {
                 .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CorreoUser)))
-                .addGap(16, 16, 16))
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CorreoUser)
+                            .addComponent(BtnPerfil)))
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(39, 39, 39))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(SesionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addContainerGap()
+                .addComponent(BtnPerfil)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CorreoUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(RegistrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                .addGap(0, 17, Short.MAX_VALUE)
+                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -259,7 +280,7 @@ public class LandingPage extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -669,13 +690,16 @@ public class LandingPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SesionBtnActionPerformed
+        //Se va a la vista del registro del usuario
         this.lg.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_SesionBtnActionPerformed
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
+        
+        //Al momento de buscar se selecciona el objeto de la ciudad seleccionada por el usuario y se pasa su informacion a la siguiente vista
         if(this.lg.isInicioSesionExitoso() || this.sp.isUsuarioExistente()){
-            
+            //Solo si el usuaior ya esta con un perfil activo en el programa
             Ciudad ciudadSeleccionada = (Ciudad) ListadoCiudades.getSelectedItem();
 
             Hotel[] hoteles = ciudadSeleccionada.getHoteles();
@@ -697,7 +721,9 @@ public class LandingPage extends javax.swing.JFrame {
             this.vc.setVisible(true);
             this.vc.setLp(this);
             this.setVisible(false);
+            
         }else{
+            
             JOptionPane.showMessageDialog(null,"Debe estar con un perfil activo para avanzar");
         }
     }//GEN-LAST:event_BuscarActionPerformed
@@ -716,11 +742,21 @@ public class LandingPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ListadoCiudadesActionPerformed
 
     private void RegistrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarBtnActionPerformed
-       
+        //Se va a la vista del registro del usuario
         this.sp.setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_RegistrarBtnActionPerformed
+
+    private void BtnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPerfilActionPerformed
+        
+        //Se va a la vista del perfil del usuario
+        this.vpe.Email.setText(CorreoUser.getText());
+        this.vpe.Correo.setText(CorreoUser.getText());
+        
+        this.vpe.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnPerfilActionPerformed
     
     /**
      * @param args the command line arguments
@@ -756,6 +792,7 @@ public class LandingPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton BtnPerfil;
     private javax.swing.JButton Buscar;
     public javax.swing.JLabel CorreoUser;
     public javax.swing.JPanel Icono;

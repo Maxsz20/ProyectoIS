@@ -5,10 +5,6 @@
 package ClasesObjetos;
 
 
-/**
- *
- * @author Maxi
- */
 public class Ciudad {
     
     private String nombre;
